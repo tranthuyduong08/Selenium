@@ -31,6 +31,7 @@ public class ActionClass {
 
 		// pass the product name that has to be searched in the website
 		action.sendKeys(element, "gmo-z.com runsystem").build().perform();
+		Thread.sleep(1000);
 
 		action.sendKeys(Keys.ENTER).build().perform();
 
@@ -40,10 +41,8 @@ public class ActionClass {
 		// perform a mouse click on the search button
 		action.click(elementTitlePage).build().perform();
 
-		Thread.sleep(2000);
+
 		driver.quit();
 
 	}
 }
-
-

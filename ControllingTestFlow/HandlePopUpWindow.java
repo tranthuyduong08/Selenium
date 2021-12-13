@@ -17,17 +17,17 @@ public class HandlePopUpWindow {
 		driver.get("http://demo.guru99.com/popup.php");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[contains(@href,'popup.php')]")).click();
-		
+
 		// Save main window
 		String MainWindow = driver.getWindowHandle();
 		System.out.println(MainWindow);
-		
+
 		// Get all new opened window.
 		Set<String> windows = driver.getWindowHandles();
-		for(String window : windows){
+		for (String window : windows) {
 			System.out.println(window);
 			if (!MainWindow.equalsIgnoreCase(window)) {
-				//Switch to Child window
+				// Switch to Child window
 				driver.switchTo().window(window);
 				Thread.sleep(2000);
 				System.out.println("Go to window child");
@@ -40,10 +40,9 @@ public class HandlePopUpWindow {
 		}
 		// Switching to Parent window (Main Window)
 		driver.switchTo().window(MainWindow);
-		System.out.println("Go to main window: "+ driver.getTitle());
-		
+		System.out.println("Go to main window: " + driver.getTitle());
+
 		Thread.sleep(2000);
-        driver.quit();
+		driver.quit();
 	}
 }
-

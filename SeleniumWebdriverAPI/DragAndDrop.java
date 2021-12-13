@@ -22,16 +22,13 @@ public class DragAndDrop {
 		WebElement To = driver.findElement(By.xpath("//*[@id='bank']/li"));
 
 		Actions action = new Actions(driver);
-		Thread.sleep(1000);
 		// Dragged and dropped.
 		action.dragAndDrop(From, To).build().perform();
-		
-		Thread.sleep(1000);
+
 		// Drag and Drop by Pixel.
 		WebElement from_5000 = driver.findElement(By.xpath("//*[@id='fourth']/a"));
 		action.dragAndDropBy(from_5000, 168, 40).build().perform();
 
-		Thread.sleep(2000);
 		driver.quit();
 	}
 
